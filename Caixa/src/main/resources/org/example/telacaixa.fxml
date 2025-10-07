@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" type="TabPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+  <tabs>
+    <Tab fx:id="tap_caixa" text="Caixa">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txt_tam1" layoutX="49.0" layoutY="80.0" />
+                  <TextField fx:id="txt_cor1" layoutX="49.0" layoutY="161.0" />
+                  <TextField fx:id="txt_dono" layoutX="49.0" layoutY="240.0" />
+                  <Label layoutX="49.0" layoutY="63.0" />
+                  <Label layoutX="49.0" layoutY="144.0" text="Cor" />
+                  <Label layoutX="49.0" layoutY="223.0" text="Dono" />
+                  <Label layoutX="49.0" layoutY="63.0" text="Tamanho" />
+                  <Button fx:id="btn_salvar1" layoutX="274.0" layoutY="284.0" mnemonicParsing="false" onAction="#salvarDados" style="-fx-background-color: #D2B48C;" text="Salvar" textFill="WHITE" />
+                  <ImageView fitHeight="226.0" fitWidth="243.0" layoutX="315.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/caixa.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tap_homem" text="Homem">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txt_altura" layoutX="49.0" layoutY="73.0" />
+                  <TextField fx:id="txt_cor2" layoutX="49.0" layoutY="151.0" />
+                  <TextField fx:id="txt_persona" layoutX="49.0" layoutY="230.0" />
+                  <Label layoutX="49.0" layoutY="56.0" text="Altura" />
+                  <Label layoutX="49.0" layoutY="134.0" text="Cor" />
+                  <Label layoutX="49.0" layoutY="213.0" text="Personalidade" />
+                  <Button fx:id="btn_salvar2" layoutX="274.0" layoutY="279.0" mnemonicParsing="false" onAction="#salvarDados" style="-fx-background-color: #FFDB58;" text="Salvar" />
+                  <ImageView fitHeight="205.0" fitWidth="325.0" layoutX="250.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/homem.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tab_casa" text="Casa">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txt_loc" layoutX="59.0" layoutY="87.0" />
+                  <TextField fx:id="txt_cor3" layoutX="59.0" layoutY="161.0" />
+                  <TextField fx:id="txt_tam3" layoutX="59.0" layoutY="236.0" />
+                  <Label layoutX="59.0" layoutY="70.0" text="Localização" />
+                  <Label layoutX="59.0" layoutY="144.0" text="Cor" />
+                  <Label layoutX="59.0" layoutY="219.0" text="Tamanho" />
+                  <ImageView fitHeight="161.0" fitWidth="208.0" layoutX="336.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/casa.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_salvar" layoutX="274.0" layoutY="277.0" mnemonicParsing="false" onAction="#salvarDados" style="-fx-background-color: #F39C12;" text="Salvar" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</fx:root>

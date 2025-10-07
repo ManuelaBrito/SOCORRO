@@ -15,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("/telacaixa"), 735, 400);
+        scene = new Scene(loadFXML("telacaixa"), 735, 400);
         stage.setScene(scene);
         stage.show();
     }
@@ -25,7 +25,7 @@ public class Main extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/" + fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("telacaixa.fxml"));
         return fxmlLoader.load();
     }
 
