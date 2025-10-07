@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: azul;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+  <tabs>
+    <Tab fx:id="tpn_caixa" text="Caixa">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="75.0" layoutY="58.0" text="Tamanho">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="124.0" text="Cor">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="181.0" text="Dono">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_tam1" layoutX="75.0" layoutY="75.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_cor1" layoutX="75.0" layoutY="140.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_dono" layoutX="75.0" layoutY="200.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <ImageView fitHeight="215.0" fitWidth="301.0" layoutX="274.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Downloads/istockphoto-520619396-612x612.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_enviar1" layoutX="260.0" layoutY="243.0" mnemonicParsing="false" onAction="#enviarDados" style="-fx-background-color: #BC905D;" text="Enviar" />
+                  <ImageView fitHeight="263.0" fitWidth="284.0" layoutX="314.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Downloads/48x27x26-aberta.jpg" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tpn_homem" text="Homem">
+         <content>
+            <Pane>
+               <children>
+                  <Label layoutX="55.0" layoutY="53.0" text="Altura">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="55.0" layoutY="112.0" text="Cor">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="55.0" layoutY="168.0" text="Personalidade">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_alt" layoutX="55.0" layoutY="72.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_cor2" layoutX="55.0" layoutY="130.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_perso" layoutX="55.0" layoutY="186.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <ImageView fitHeight="180.0" fitWidth="332.0" layoutX="255.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Downloads/maxresdefault.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_enviar2" layoutX="99.0" layoutY="254.0" mnemonicParsing="false" onAction="#enviarDados2" style="-fx-background-color: black;" text="Enviar" textFill="#140000">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+    </Tab>
+      <Tab fx:id="tpn_casa" text="Casa">
+         <content>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #AA7444;">
+               <children>
+                  <Label layoutX="78.0" layoutY="168.0" text="Tamanho">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="105.0" text="Cor">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="45.0" text="Localização">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="179.0" fitWidth="232.0" layoutX="311.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Downloads/25902055-casa-desenho-animado-estilo-ilustracao-ai-gerado-vetor%20(1).jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btn_enviar3" layoutX="257.0" layoutY="252.0" mnemonicParsing="false" onAction="#enviarDados3" style="-fx-background-color: #AA7444;" text="Enviar" />
+                  <TextField fx:id="txt_loc" layoutX="75.0" layoutY="63.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_cor3" layoutX="75.0" layoutY="123.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+                  <TextField fx:id="txt_tam2" layoutX="75.0" layoutY="186.0" onDragDetected="#salvarDados" style="-fx-border-color: grey;" />
+               </children>
+            </Pane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
