@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.PrimaryController">
+
+    <padding>
+        <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+    </padding>
+
+    <spacing>10</spacing>
+
+    <Label text="Sistema de Visualização de Orientações - Professor TG"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Tabela de Alunos -->
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Lista de Alunos" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="tableViewAlunos" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNomeAluno" text="Nome" prefWidth="150"/>
+                    <TableColumn fx:id="colEmailAluno" text="Email" prefWidth="200"/>
+                    <TableColumn fx:id="colOrientadorAluno" text="Orientador" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- Tabela de Professores -->
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Lista de Professores" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="tableViewProfessores" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNomeProfessor" text="Nome" prefWidth="200"/>
+                    <TableColumn fx:id="colQuantidadeAlunos" text="Qtd. Alunos" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

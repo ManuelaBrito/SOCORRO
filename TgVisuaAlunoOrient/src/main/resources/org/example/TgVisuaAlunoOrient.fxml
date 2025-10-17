@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ControllerPrincipal">
+
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <Label text="Sistema de Visualização de Orientações - Professor TG"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Label text="Controle e acompanhamento da distribuição de alunos entre orientadores"
+                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <!-- Aba 1: Visualização Geral -->
+            <Tab text="📊 Visualização Geral">
+                <VBox spacing="15" padding="$x10">
+                    <HBox spacing="20">
+                        <!-- Estatísticas -->
+                        <VBox spacing="10" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-padding: 10;">
+                            <Label text="📈 Estatísticas Gerais" style="-fx-font-weight: bold;"/>
+                            <GridPane hgap="10" vgap="5">
+                                <Label text="Total de Alunos:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <Label fx:id="labelTotalAlunos" text="0" style="-fx-font-weight: bold;"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Com Orientador:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <Label fx:id="labelAlunosComOrientador" text="0" style="-fx-font-weight: bold; -fx-text-fill: green;"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Sem Orientador:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <Label fx:id="labelAlunosSemOrientador" text="0" style="-fx-font-weight: bold; -fx-text-fill: red;"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Média por Professor:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <Label fx:id="labelMediaPorProfessor" text="0.0" style="-fx-font-weight: bold;"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                            </GridPane>
+                        </VBox>
+
+                        <!-- Controles de Vinculação -->
+                        <VBox spacing="10" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-padding: 10;">
+                            <Label text="🔗 Vincular Aluno a Orientador" style="-fx-font-weight: bold;"/>
+                            <VBox spacing="8">
+                                <Label text="Selecionar Aluno:"/>
+                                <ComboBox fx:id="comboAlunos" promptText="Selecione um aluno"/>
+
+                                <Label text="Selecionar Orientador:"/>
+                                <ComboBox fx:id="comboProfessores" promptText="Selecione um professor"/>
+
+                                <HBox spacing="10">
+                                    <Button text="Vincular" onAction="#vincularAlunoOrientador"
+                                            style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                                    <Button text="Desvincular" onAction="#desvincularAluno"
+                                            style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Tabelas -->
+                    <HBox spacing="20" VBox.vgrow="ALWAYS">
+                        <!-- Tabela de Alunos -->
+                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                            <Label text="👥 Lista de Alunos" style="-fx-font-weight: bold;"/>
+                            <TableView fx:id="tableViewAlunos" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="colNomeAluno" text="Nome" prefWidth="150"/>
+                                    <TableColumn fx:id="colEmailAluno" text="Email" prefWidth="200"/>
+                                    <TableColumn fx:id="colOrientadorAluno" text="Orientador" prefWidth="150"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <!-- Tabela de Professores -->
+                        <VBox spacing="5" HBox.hgrow="ALWAYS">
+                            <Label text="👨‍🏫 Lista de Professores" style="-fx-font-weight: bold;"/>
+                            <TableView fx:id="tableViewProfessores" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="colNomeProfessor" text="Nome" prefWidth="200"/>
+                                    <TableColumn fx:id="colQuantidadeAlunos" text="Qtd. Alunos" prefWidth="100"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <!-- Aba 2: Relatórios -->
+            <Tab text="📋 Relatórios">
+                <VBox spacing="15" padding="$x10">
+                    <HBox spacing="10">
+                        <Button text="Gerar Relatório Completo" onAction="#gerarRelatorioCompleto"
+                                style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                        <Button text="Gerar Relatório Estatístico" onAction="#gerarRelatorioEstatistico"
+                                style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+                        <Button text="Limpar Relatório" onAction="#limparRelatorio"
+                                style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
+                    </HBox>
+
+                    <TextArea fx:id="areaRelatorio" VBox.vgrow="ALWAYS"
+                              style="-fx-font-family: 'Monospaced'; -fx-font-size: 12px;"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-background-color: #ecf0f1; -fx-padding: 10;">
+            <Label text="Sistema de Orientação - Desenvolvido para Professor de TG"
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
