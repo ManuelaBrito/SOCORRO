@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane xmlns="http://javafx.com/javafx/11.0.1"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="org.example.PrimaryController"
+         prefWidth="600" prefHeight="400">
+
+    <!-- Aba Sítio -->
+    <Tab text="Sítio">
+        <AnchorPane fx:id="acp_sitio" style="-fx-background-color:  #034C8C;">
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Tamanho:" prefWidth="80"/>
+                    <TextField fx:id="txt_tam1" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Duende:" prefWidth="80"/>
+                    <TextField fx:id="txt_duende" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Cogumelo:" prefWidth="80"/>
+                    <TextField fx:id="txt_cogu" prefWidth="150"/>
+                </HBox>
+
+                <Button fx:id="btn_salvar1" onAction="#salvarSitio" text="Salvar" style="-fx-pref-width: 120px; -fx-background-color: #F27B13; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </VBox>
+        </AnchorPane>
+    </Tab>
+
+    <!-- Aba Planta -->
+    <Tab text="Planta">
+        <AnchorPane fx:id="acp_planta" style="-fx-background-color: #F27B13;">
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+                <Label text="Cadastrar Planta" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #F27B13;"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Tamanho:" prefWidth="80"/>
+                    <TextField fx:id="txt_tam2" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Cor:" prefWidth="80"/>
+                    <TextField fx:id="txt_cor1" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Espécie:" prefWidth="80"/>
+                    <TextField fx:id="txt_espe" prefWidth="150"/>
+                </HBox>
+
+                <Button fx:id="btn_salvar2" onAction="#salvarPlanta" text="Salvar" style="-fx-pref-width: 120px; -fx-background-color: #F27B13; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </VBox>
+        </AnchorPane>
+    </Tab>
+
+    <!-- Aba Dog -->
+    <Tab text="Dog">
+        <AnchorPane fx:id="acp_dog" style="-fx-background-color: #F27B13;">
+            <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+                <Label text="Cadastrar Dog" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #F27B13;"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Nome:" prefWidth="80"/>
+                    <TextField fx:id="txt_nome" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Cor:" prefWidth="80"/>
+                    <TextField fx:id="txt_cor3" prefWidth="150"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Idioma:" prefWidth="80"/>
+                    <TextField fx:id="txt_idioma" prefWidth="150"/>
+                </HBox>
+
+                <Button fx:id="btn_salvar3" onAction="#salvarCachorro" text="Salvar" style="-fx-pref-width: 120px; -fx-background-color: #F27B13; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </VBox>
+        </AnchorPane>
+    </Tab>
+
+</TabPane>
