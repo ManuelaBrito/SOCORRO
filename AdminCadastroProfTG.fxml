@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600" prefWidth="1000" stylesheets="@../styles/admin.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.controller.AdminCadastroProfessoresTGController">
+
+    <!-- Layout Principal 30/70 -->
+    <left>
+        <!-- Menu Lateral (30%) Simplificado -->
+        <VBox fx:id="vboxMenuAdminTG" alignment="TOP_CENTER" fillWidth="true" prefWidth="300.0" spacing="20.0" styleClass="menu-lateral">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <children>
+                <!-- Título do Menu -->
+                <Label styleClass="menu-titulo" text="Administrador" VBox.vgrow="NEVER" />
+
+                <!-- Botões Principais -->
+                <VBox alignment="TOP_CENTER" fillWidth="true" spacing="15.0">
+                    <children>
+                        <!-- Botão Cadastrar Professores -->
+                        <JFXButton fx:id="btnCadastrarProfessores" maxWidth="Infinity" onAction="#abrirCadastrarProfessores" styleClass="menu-btn active" text="Cadastrar Professores" />
+
+                        <!-- Botão Visualizar Professores -->
+                        <JFXButton fx:id="btnVisualizarProfCadastrados" maxWidth="Infinity" onAction="#abrirVisualizacaoProfessores" styleClass="menu-btn" text="Visualizar Professores" />
+
+                        <!-- Botão Perfil -->
+                        <JFXButton fx:id="btnPerfil" maxWidth="Infinity" onAction="#abrirPerfil" styleClass="menu-btn" text="Perfil" />
+                    </children>
+                </VBox>
+
+                <Separator styleClass="menu-separator" />
+            <Button mnemonicParsing="false" text="Cadastrar Professores">
+               <opaqueInsets>
+                  <Insets top="100.0" />
+               </opaqueInsets>
+            </Button>
+            <Button mnemonicParsing="false" text="Professores cadastrados" />
+            <Button mnemonicParsing="false" text="Perfil" />
+
+                <Region prefHeight="285.0" prefWidth="260.0" VBox.vgrow="ALWAYS" />
+
+                <Separator styleClass="menu-separator" />
+
+                <!-- Área do Usuário -->
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="menu-usuario">
+                    <Region HBox.hgrow="ALWAYS" />
+                    <JFXButton fx:id="btnSair" onAction="#sair" styleClass="menu-btn-sair" text="Sair" />
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <!-- Conteúdo Principal (70%) -->
+        <VBox fx:id="conteudoPrincipal" style="-fx-background-color: #F5F7FA;" styleClass="conteudo-principal">
+
+            <!-- Cabeçalho -->
+            <HBox spacing="50" style="-fx-background-color: #0C538A;" styleClass="cabecalho">
+                <Label prefHeight="54.0" prefWidth="241.0" styleClass="titulo-pagina" text="     Cadastro de Professores unitário" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblDataAtual" styleClass="data-atual" />
+            </HBox>
+
+            <!-- Formulário de Cadastro -->
+            <VBox prefHeight="141.0" prefWidth="700.0" spacing="20" style="-fx-border-color: #E0E0E0; -fx-background-color: #F5F7FA;" styleClass="form-container">
+                <Label prefHeight="12.0" prefWidth="155.0" styleClass="form-titulo" text="  Dados do Professor:">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+
+                <GridPane hgap="15" styleClass="form-grid" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" prefWidth="150" />
+                        <ColumnConstraints halignment="LEFT" prefWidth="300" />
+                    </columnConstraints>
+
+                    <!-- Linha 1: Nome -->
+                    <Label text="Nome Completo:*" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <JFXTextField fx:id="txtNome" promptText="Digite o nome completo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <!-- Linha 2: Email -->
+                    <Label text="Email:*" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <JFXTextField fx:id="txtEmail" promptText="email@instituicao.edu.br" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <!-- Linha 3: TG -->
+                    <Label text="TG:*" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="cbTG" promptText="Selecione o tipo de TG" style="-fx-background-color: #E0E0E0;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <TextField fx:id="txtNomeComp" promptText="Digite o nome completo" GridPane.columnIndex="1" />
+               <TextField fx:id="txtEmail" promptText="email@instituição.org.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            <Button mnemonicParsing="false" style="-fx-background-color: #0C538A;" text="Salvar" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="300.0" />
+               </VBox.margin>
+            </Button>
+
+                <!-- Botões de Ação -->
+                <HBox prefWidth="700.0" spacing="5" styleClass="botoes-acao">
+                    <JFXButton fx:id="btnSalvar" onAction="#salvarProfessor" styleClass="btn-primario" text="Salvar Professor" />
+                    <JFXButton fx:id="btnLimpar" onAction="#limparCampos" styleClass="btn-secundario" text="Limpar Campos" />
+                    <JFXButton fx:id="btnCancelar" onAction="#cancelar" styleClass="btn-terciario" text="Cancelar" />
+                </HBox>
+            </VBox>
+
+            <!-- Lista de Professores Cadastrados -->
+            <VBox maxHeight="200" prefHeight="200" spacing="10" style="-fx-background-color: #F5F7FA;" styleClass="lista-container">
+                <Label styleClass="lista-titulo" text="Professores Cadastrados">
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets></Label>
+
+                <TableView fx:id="tabelaProfessores" prefHeight="151.0" prefWidth="676.0" styleClass="tabela-dados">
+                    <columns>
+                        <TableColumn fx:id="colNome" prefWidth="224.0" text="Nome" />
+                        <TableColumn fx:id="colEmail" prefWidth="282.0" text="Email" />
+                        <TableColumn fx:id="colTG" prefWidth="192.6666259765625" text="Tipo TG" />
+                    </columns>
+                </TableView>
+            </VBox>
+         <Separator prefWidth="200.0" />
+         <Label prefHeight="59.0" prefWidth="434.0" text="    Carregue um arquivo csv para cadastrar mais de um professor de TG: " />
+        </VBox>
+    </center>
+</BorderPane>
