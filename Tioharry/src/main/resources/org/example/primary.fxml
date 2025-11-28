@@ -1,16 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
-   <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<TabPane fx:id="mainTabPane" prefHeight="900" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/17.0.2"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="org.example.controller.PrimaryController">
+
+    <tabs>
+        <!-- Tab Sítio -->
+        <Tab fx:id="tap_sitio" text="Sítio">
+            <content>
+                <AnchorPane fx:id="acp_sitio" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #034C8C;">
+                    <children>
+                        <!-- Formulário à esquerda -->
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="15.0" prefWidth="300.0">
+                            <children>
+                                <!-- Campo Tamanho -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Tamanho" textFill="#fdfdfd">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_tam1" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Duende -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Duende" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_duende" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Cogumelo -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Cogumelo" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_cogu" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Botões -->
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button fx:id="btn_salvar1" mnemonicParsing="false"
+                                                style="-fx-background-color: #F27B13; -fx-background-radius: 5;"
+                                                text="Salvar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#salvarDados1" />
+                                        <Button fx:id="btn_editar1" mnemonicParsing="false"
+                                                style="-fx-background-color: #2196F3; -fx-background-radius: 5;"
+                                                text="Editar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#editarSitio" />
+                                        <Button fx:id="btn_excluir1" mnemonicParsing="false"
+                                                style="-fx-background-color: #D32F2F; -fx-background-radius: 5;"
+                                                text="Excluir" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#excluirDados1" />
+                                        <Button mnemonicParsing="false"
+                                                style="-fx-background-color: #757575; -fx-background-radius: 5;"
+                                                text="Limpar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#limparDados1" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Imagem no meio -->
+                        <ImageView fitHeight="250.0" fitWidth="250.0"
+                                   layoutX="450.0" layoutY="20.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@sitio.png" />
+                            </image>
+                        </ImageView>
+
+                        <!-- Tabela à direita -->
+                        <TableView fx:id="Table_sítio" layoutX="350.0" layoutY="300.0" prefHeight="250.0" prefWidth="430.0">
+                            <columns>
+                                <TableColumn fx:id="col_sitio_id" prefWidth="50" text="ID" />
+                                <TableColumn fx:id="col_sitio_tamanho" prefWidth="120" text="Tamanho" />
+                                <TableColumn fx:id="col_sitio_duende" prefWidth="120" text="Duende" />
+                                <TableColumn fx:id="col_sitio_cogumelo" prefWidth="120" text="Cogumelo" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <!-- Tab Planta -->
+        <Tab fx:id="tap_planta" text="Planta">
+            <content>
+                <AnchorPane fx:id="acp_planta" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FC4A96;">
+                    <children>
+                        <!-- Formulário à esquerda -->
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="15.0" prefWidth="300.0">
+                            <children>
+                                <!-- Campo Tamanho -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Tamanho">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_tam2" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Cor -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Cor">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_cor1" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Espécie -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Espécie">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_espe" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Botões -->
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button fx:id="btn_salvar2" mnemonicParsing="false"
+                                                style="-fx-background-color: #85A60F; -fx-background-radius: 5;"
+                                                text="Salvar"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#salvarDados2" />
+                                        <Button fx:id="btn_editar2" mnemonicParsing="false"
+                                                style="-fx-background-color: #2196F3; -fx-background-radius: 5;"
+                                                text="Editar"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#editarPlanta" />
+                                        <Button fx:id="btn_excluir2" mnemonicParsing="false"
+                                                style="-fx-background-color: #D32F2F; -fx-background-radius: 5;"
+                                                text="Excluir"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#excluirDados2" />
+                                        <Button mnemonicParsing="false"
+                                                style="-fx-background-color: #757575; -fx-background-radius: 5;"
+                                                text="Limpar"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#limparDados2" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Imagem no meio -->
+                        <ImageView fitHeight="250.0" fitWidth="200.0"
+                                   layoutX="500.0" layoutY="20.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@planta.jpg" />
+                            </image>
+                        </ImageView>
+
+                        <!-- Tabela à direita -->
+                        <TableView fx:id="table_planta_tabela" layoutX="350.0" layoutY="300.0" prefHeight="250.0" prefWidth="430.0">
+                            <columns>
+                                <TableColumn fx:id="col_planta_id" prefWidth="50" text="ID" />
+                                <TableColumn fx:id="col_planta_tamanho" prefWidth="120" text="Tamanho" />
+                                <TableColumn fx:id="col_planta_cor" prefWidth="120" text="Cor" />
+                                <TableColumn fx:id="col_planta_especie" prefWidth="120" text="Espécie" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+
+        <!-- Tab Dog -->
+        <Tab fx:id="tap_planta1" text="Dog">
+            <content>
+                <AnchorPane fx:id="acp_dog" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #A6588A;">
+                    <children>
+                        <!-- Formulário à esquerda -->
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="15.0" prefWidth="300.0">
+                            <children>
+                                <!-- Campo Nome -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Nome" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_nome" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Cor -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Cor" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_cor3" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Campo Idioma -->
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Idioma" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txt_idioma" prefWidth="250.0" prefHeight="30.0" />
+                                    </children>
+                                </VBox>
+
+                                <!-- Botões -->
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button fx:id="btn_salvar3" mnemonicParsing="false"
+                                                style="-fx-background-color: #A64E46; -fx-background-radius: 5;"
+                                                text="Salvar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#salvarDados3" />
+                                        <Button fx:id="btn_editar3" mnemonicParsing="false"
+                                                style="-fx-background-color: #2196F3; -fx-background-radius: 5;"
+                                                text="Editar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#editarDog" />
+                                        <Button fx:id="btn_excluir3" mnemonicParsing="false"
+                                                style="-fx-background-color: #D32F2F; -fx-background-radius: 5;"
+                                                text="Excluir" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#excluirDados3" />
+                                        <Button mnemonicParsing="false"
+                                                style="-fx-background-color: #757575; -fx-background-radius: 5;"
+                                                text="Limpar" textFill="WHITE"
+                                                prefWidth="80.0" prefHeight="35.0"
+                                                onAction="#limparDados3" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Imagem no meio -->
+                        <ImageView fitHeight="250.0" fitWidth="180.0"
+                                   layoutX="525.0" layoutY="20.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@dog.jpg" />
+                            </image>
+                        </ImageView>
+
+                        <!-- Tabela à direita -->
+                        <TableView fx:id="table_dog_tabela" layoutX="350.0" layoutY="300.0" prefHeight="250.0" prefWidth="430.0">
+                            <columns>
+                                <TableColumn fx:id="col_dog_id" prefWidth="50" text="ID" />
+                                <TableColumn fx:id="col_dog_nome" prefWidth="120" text="Nome" />
+                                <TableColumn fx:id="col_dog_cor" prefWidth="120" text="Cor" />
+                                <TableColumn fx:id="col_dog_idioma" prefWidth="120" text="Idioma" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
