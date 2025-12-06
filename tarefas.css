@@ -1,0 +1,162 @@
+/* telatarefas.css - Estilos para tela de tarefas */
+
+/* Pane principal */
+.root {
+    -fx-background-color: #9BBF65;
+}
+
+/* Labels */
+.label-tarefa {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.label-usuario {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Campos de texto */
+.campo-tarefa {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: #e6b325;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 13px;
+}
+
+.campo-tarefa:focused {
+    -fx-border-color: #9ccb6c;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(156, 203, 108, 0.3), 5, 0, 0, 2);
+}
+
+/* DatePicker */
+.datepicker-tarefa {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: #e6b325;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.datepicker-tarefa .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* TableView */
+.tabela-tarefas {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-border-color: #d4a574;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.tabela-tarefas .column-header {
+    -fx-background-color: #9ccb6c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.tabela-tarefas .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.tabela-tarefas .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #f0f0f0 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 8px 0;
+}
+
+.tabela-tarefas .table-row-cell:filled:hover {
+    -fx-background-color: #e8f5e8;
+}
+
+.tabela-tarefas .table-row-cell:filled:selected {
+    -fx-background-color: #9ccb6c;
+    -fx-text-fill: black;
+}
+
+/* CheckBox nas células */
+.tabela-tarefas .check-box {
+    -fx-text-fill: transparent;
+}
+
+.tabela-tarefas .check-box:selected .box {
+    -fx-background-color: #2ecc71;
+    -fx-border-color: #27ae60;
+}
+
+.tabela-tarefas .check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+}
+
+/* Botões dentro da TableView */
+.tabela-tarefas .button {
+    -fx-background-color: #e6b325;
+    -fx-text-fill: black;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 3px;
+    -fx-padding: 3px 8px;
+    -fx-cursor: hand;
+}
+
+.tabela-tarefas .button:hover {
+    -fx-background-color: #d4a316;
+}
+
+.tabela-tarefas .button:pressed {
+    -fx-background-color: #8b4513;
+}
+
+/* Botão Logout */
+.botao-logout {
+    -fx-background-color: #e6b325;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+}
+
+.botao-logout:hover {
+    -fx-background-color: #d4a316;
+}
+
+.botao-logout:pressed {
+    -fx-background-color: #8b4513;
+    -fx-translate-y: 1px;
+}
+
+/* Botão Adicionar */
+.botao-adicionar {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 15px;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-cursor: hand;
+}
+
+.botao-adicionar:hover {
+    -fx-background-color: #27ae60;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
+}
+
+.botao-adicionar:pressed {
+    -fx-background-color: #219653;
+    -fx-translate-y: 1px;
+}
